@@ -18,12 +18,12 @@ public class MainServlet extends HttpServlet {
 	private UserService userService;
 	private JsonRpcServer jsonRpcServer;
 
-	MainServlet() {
+	public MainServlet() {
 		userService = new UserService();
 		jsonRpcServer = new JsonRpcServer(this.userService, UserService.class);
 	}
 
-	protected void doGet(
+	protected void doPost(
 			HttpServletRequest httpServletRequest,
 			HttpServletResponse httpServletResponse)
 			throws ServletException, IOException {
